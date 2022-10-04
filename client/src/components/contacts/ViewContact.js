@@ -1,6 +1,7 @@
 //This page will display the contacts in my database
 import React, { useEffect } from "react";
 import { useState } from "react";
+import AddContact from "./AddContact";
 
 const ViewContact = () =>{
     const[contacts, setContacts]= useState([]);
@@ -24,7 +25,8 @@ const ViewContact = () =>{
     {contacts.map((contact, index) =>{
         return(
             <div className="container">
-                <img src={contact.image} alt="image" height="30px"></img>
+                
+                <img src={contact.image} alt="image0" height="30px"></img>
                 <h1>{contact.name}</h1>
                 <h2>{contact.phone_number}</h2>
                 <h2>{contact.email}</h2>

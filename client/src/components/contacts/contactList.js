@@ -1,8 +1,10 @@
 //This page will display the contacts in my database
 import React, { useEffect } from "react";
 import { useState } from "react";
+import AddContact from "./AddContact";
 
 const ContactList = () =>{
+
     const[contacts, setContacts]= useState([]);
     //get request to get contacts table
     const getContacts = async () =>{
