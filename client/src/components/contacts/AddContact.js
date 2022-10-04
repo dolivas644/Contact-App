@@ -28,7 +28,7 @@ const reducer = (state, action) => {
         case 'addImage':
             return { ...state, image: action.payload };
         case 'clearForm':
-            return { id: "", name: '', email: '',phone_number: '', contact_id: '', notes: '', image: '' };
+            return { id: '', name: '', email: '',phone_number: '', contact_id: '', notes: '', image: '' };
         default:
             return state;
     }
@@ -82,25 +82,25 @@ const AddContact = () =>{
     <form onSubmit={handleAddContact}>
         <fieldset>
         <label>ID: </label>
-        <input type="number" value={state.id} onChange={(e) => dispatchEvent({type: 'addId', payload: e.target.value})}/>
+        <input type="number" value={state.id} onChange={(e) => dispatch({type: 'addID', payload: e.target.value})}/>
         <br></br>
         <label>Name: </label>
-        <input type="text" value={state.name} onChange={(e) => dispatchEvent({type: 'addName', payload: e.target.value})}/>
+        <input type="text" value={state.name} onChange={(e) => dispatch({type: 'addName', payload: e.target.value})}/>
         <br></br>
         <label>Email: </label>
-        <input type="email" value={state.email} onChange={(e) => dispatchEvent({type: 'addEmail', payload: e.target.value})}/>
+        <input type="email" value={state.email} onChange={(e) => dispatch({type: 'addEmail', payload: e.target.value})}/>
         <br></br>
         <label>Phone Number: </label>
-        <input type="text" maxLength={11} value={state.phone_number} onChange={(e) => dispatchEvent({type: 'addPhoneNumber', payload: e.target.value})}/>
+        <input type="text" value={state.phone_number} onChange={(e) => dispatch({type: 'addPhoneNumber', payload: e.target.value})}/>
         <br></br>
         <label>Contact ID: </label>
-        <input type="number" value={state.conact_id} onChange={(e) => dispatchEvent({type: 'addContactId', payload: e.target.value})}/>
+        <input type="number" value={state.conact_id} onChange={(e) => dispatch({type: 'addContactId', payload: e.target.value})}/>
         <br></br>
         <label>Notes: </label>
-        <input type="text" value={state.notes} onChange={(e) => dispatchEvent({type: 'addNotes', payload: e.target.value})}/>
+        <input type="text" value={state.notes} onChange={(e) => dispatch({type: 'addNotes', payload: e.target.value})}/>
         <br></br>
         <label>Image: </label>
-        <input type="text" value={state.image} onChange={(e) => dispatchEvent({type: 'addImage', payload: e.target.value})} />
+        <input type="text" value={state.image} onChange={(e) => dispatch({type: 'addImage', payload: e.target.value})} />
         </fieldset>
         <input type="submit"/>
     </form>
