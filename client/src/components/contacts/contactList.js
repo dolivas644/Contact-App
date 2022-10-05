@@ -2,8 +2,10 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import AddContact from "./AddContact";
+import ViewContact from "./ViewContact";
+import contact from "./contact.css"
 
-const ContactList = () =>{
+const ContactList = ({setUserToDisplay}) =>{
 
     const[contacts, setContacts]= useState([]);
     //get request to get contacts table
@@ -20,20 +22,31 @@ const ContactList = () =>{
         getContacts();
     }, []);
 
+
     return(
 <>
 <header>List of Contacts</header>
-<table>
-    <tbody>
+<div className="card">
         {contacts.map((contact, index) =>{
             return(
-                <tr key={index}>
-                    <td><button>{contact.name}</button></td>
-                </tr>
+                <div className="container">
+                    <div className="contactIndividual">
+                        <img src={contact.image} alt="img" className="image"></img>
+                    <h1 onClick={() => setUserToDisplay(contact)}>{contact.name}</h1>
+                    </div>
+                    
+                    <div className="button">
+                    <button>Delete</button>
+                    <button>Edit</button>
+                    <br></br>
+                    </div>
+                    <br></br>
+                    </div>
+                    
+                
             )
         })}
-    </tbody>
-</table>
+</div>
 </>
     );
 }

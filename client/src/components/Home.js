@@ -6,17 +6,18 @@ import AddContact from "./contacts/AddContact";
 import { useState } from "react";
 
 const Home = () => {
+    const [userToDisplay, setUserToDisplay] = useState();
     return(
 <>
-<div class="box">
-    
-    <div className="column left">
-        <ContactList />
+    <div className="App">
+      {userToDisplay ? (
+        <ViewContact user={userToDisplay} setUserToDisplay={setUserToDisplay} />
+      ) : (
+        <ContactList setUserToDisplay={setUserToDisplay} />
+      )}
+
     </div>
-    <div className="column right">
-<ViewContact />
-    </div>
-</div>
+
 </>
     );
 }
