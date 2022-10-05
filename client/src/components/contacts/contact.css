@@ -1,24 +1,27 @@
-table, td{
+table,
+td {
     border: 1px solid black;
-    padding:8px;
+    padding: 8px;
 }
-table{
+
+table {
     display: flex;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-.button{
-    display: inline;
+.button {
+    display: inline-block;
 }
-.contactIndividual{
-    display: inline;
+
+.contactIndividual {
+    display: inline-block;
 
 }
 
-.image{
-    width:30px;
-    height:30px;
+.image {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
 }

@@ -9,7 +9,7 @@ import ContactList from './components/contacts/contactList';
 import ViewContact from './components/contacts/ViewContact';
 
 function App() {
-  
+
   return (
     <>
       <div className="NavBar">

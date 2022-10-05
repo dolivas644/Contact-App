@@ -42,4 +42,16 @@ router.post('/', async (req, res) => {
     }
   });
 
+  router.delete("/:id", async (req, res) => {
+  
+    const contactsId = req.params.id;
+    try {
+      await db.none("DELETE FROM Contacts WHERE id=$1", [contactsId]);
+      res.send({ status: "sucess" });
+    } catch (e) {
+      
+      return res.status(500).json({ e });
+    }
+  });
+
 export default router;

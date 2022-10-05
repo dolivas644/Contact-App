@@ -12,11 +12,12 @@ const ViewContact = ({ user, setUserToDisplay }) => {
             <button onClick={() => setUserToDisplay(undefined)}>Back</button>{" "}
             <div className="card">
                 <div className="container">
+                    <br></br>
                     <img src={user.image} alt="image0" height="30px" className="image"></img>
                     <h1>{user.name}</h1>
                     <h2>{user.phone_number}</h2>
-                    <h2>{user.email}</h2>
-                    <h2>{user.notes}</h2>
+                    <h3>{user.email}</h3>
+                    <h4>{user.notes}</h4>
                 </div>
             </div>
         </>

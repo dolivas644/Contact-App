@@ -7,18 +7,18 @@ import { useState } from "react";
 
 const Home = () => {
     const [userToDisplay, setUserToDisplay] = useState();
-    return(
-<>
-    <div className="App">
-      {userToDisplay ? (
-        <ViewContact user={userToDisplay} setUserToDisplay={setUserToDisplay} />
-      ) : (
-        <ContactList setUserToDisplay={setUserToDisplay} />
-      )}
+    return (
+        <>
+            <div className="App">
+                {userToDisplay ? (
+                    <ViewContact user={userToDisplay} setUserToDisplay={setUserToDisplay} />
+                ) : (
+                    <ContactList setUserToDisplay={setUserToDisplay} />
+                )}
 
-    </div>
+            </div>
 
-</>
+        </>
     );
 }
 export default Home;
