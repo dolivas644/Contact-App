@@ -35,11 +35,21 @@ const ContactList = ({ setUserToDisplay }) => {
         setContacts(deleteContactFunction);
     };
 
+    const[searchTerm, setSearchTerm] = useState('');
+
     return (
         <>
             <header>List of Contacts</header>
+            <input type="text" placeholder="Search for Contact . . . " className="searchBar" onChange={(e) => setSearchTerm(e.target.value)}/>
+
             <div className="card">
-                {contacts.map((contact, index) => {
+                {contacts.filter((val) =>{
+                    if( searchTerm === ''){
+                        return val
+                    }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                        return val;
+                    }
+                }).map((contact, index) => {
                     return (
                         <div className="container">
                             <div className="contactIndividual">
